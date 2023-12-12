@@ -62,3 +62,7 @@
 /drush
 /drupal.phar
 /drupal
+.ddev/
+.editorconfig
+.gitattributes
+web/README.md
