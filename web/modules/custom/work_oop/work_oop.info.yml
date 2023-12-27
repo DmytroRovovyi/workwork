@@ -1,0 +1,4 @@
+name: Work OOP
+description: Page for teaching objects.
+type: module
+core_version_requirement: ^9.2 || ^10

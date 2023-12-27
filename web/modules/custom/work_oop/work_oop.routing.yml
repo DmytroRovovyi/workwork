@@ -1,0 +1,6 @@
+work_oop.practice:
+  path: '/work-oop'
+  defaults:
+    _controller: '\Drupal\work_oop\Controller\WorkOOPController::getWorkOop'
+  requirements:
+    _access: 'TRUE'

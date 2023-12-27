@@ -10,6 +10,7 @@
 /web/sites/*/*services*.yml
 
 # Ignore paths that may contain user-generated content
+.idea/
 /web/sites/*/files
 /web/sites/*/public
 /web/sites/*/private
