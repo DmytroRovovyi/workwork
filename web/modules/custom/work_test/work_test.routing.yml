@@ -1,0 +1,6 @@
+work_test.practice:
+  path: '/work-test'
+  defaults:
+    _controller: '\Drupal\work_test\Controller\WorkTestController::getWorkTest'
+  requirements:
+    _access: 'TRUE'

@@ -3,7 +3,8 @@
 namespace Drupal\work_oop\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
-use http\Env\Response;
+use Drupal\work_test\Service\DefaultTestService;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Page for teaching objects.
@@ -13,26 +14,32 @@ class WorkOOPController extends ControllerBase {
   /**
    * {@inheritdoc}
    */
+  protected $DefaultTest;
+
+  /**
+   * @param \Drupal\work_test\Service\DefaultTestService $defaultTest
+   *   check test pi default.
+   */
+  public function __construct(DefaultTestService $defaultTest) {
+    $this->DefaultTest = $defaultTest;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container) {
+    return new static(
+      $container->get('work_test.default_pi'),
+    );
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function getWorkOop() {
-    $i = 1;
-    dump(346436436);
-//    while ($i <= 50) {
-//      dump($i);
-//
-//      $i+=5;
-//
-//    }
-//    for ($i = 1; $i <= 5; $i+=1) {
-//      $result = $i;
-//      dump($result);
-//
-//    }
-
-
-    die();
 
     $build = [
-      '#markup' => $header,
+      '#markup' => $this->DefaultTest->pi(),
     ];
 
     return $build;

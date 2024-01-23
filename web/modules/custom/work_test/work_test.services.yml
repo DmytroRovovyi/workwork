@@ -1,0 +1,3 @@
+services:
+  work_test.default_pi:
+    class: Drupal\work_test\Service\DefaultTestService
